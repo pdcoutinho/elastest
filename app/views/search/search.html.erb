@@ -10,16 +10,15 @@
  
 <ul>
   <% @articles.each do |article| %>
-    <li>
+  <hr />
+    <li><span><%= article.id %></span>
       <h3>
-        <%= article.try(:highlight).try(:title) ? article.highlight.title[0].html_safe : article.title %>
-
+        <%= article.title %>
       </h3>
-      <% if article.try(:highlight).try(:text) %>
-        <% article.highlight.text.each do |snippet| %>
-          <p><%= snippet.html_safe %>...</p>
-        <% end %>
-      <% end %>
+      <span>by <%= link_to article.user.name, edit_user_path(article.user.id) %>, scoring <%= article._score %>. </span>
+      <p>
+        <%= article.text %>
+      </p>
     </li>
   <% end %>
 </ul>

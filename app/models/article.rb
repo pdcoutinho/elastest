@@ -6,7 +6,7 @@ class Article < ActiveRecord::Base
 
   def as_indexed_json(options={})
     self.as_json(
-      include: { user: { only: :name },
+      include: { user: { only: [:id, :name] },
                  comments: { only: :body, include: { user: { only: :name }}
                  }
                })

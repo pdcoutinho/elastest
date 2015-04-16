@@ -20,6 +20,8 @@ comment_count_per_article = 3
 first_names = [ 'Pedro', 'Raluca', 'Patrick', 'Ivo', 'Guilherme', 'Marta', 'Sónia', 'Ana',
    'Silvia', 'João', 'Daniel', 'Carlos' ]
 last_names = [ 'Coutinho', 'Silva', 'Mourinho', 'Rodrigues', 'Pinto', 'Santos', 'Oliveira', 'Dias']
+
+# Sample text from lorem ipsum translations
 article_text = [
   'But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain.',
   'No one rejects, dislikes, or avoids pleasure itself, because it is pleasure.',

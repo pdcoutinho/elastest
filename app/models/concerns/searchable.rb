@@ -3,18 +3,11 @@ module Searchable
 
   included do
     include Elasticsearch::Model
+    include Elasticsearch::Model::Callbacks
+
+    after_touch() { __elasticsearch__.index_document }
 
     settings index: { number_of_shards: 1 }
-
-    # def as_indexed_json
-    #   self.as_json({
-    #     only: [:id, :title, :text, :status],
-    #     include: {
-    #       user: { only: :name },
-    #       comments: { only: :text },
-    #     }
-    #   })
-    # end
 
   end
 
