@@ -2,9 +2,9 @@
 
 Elastic search test with relational models
 
+This dummy project uses the gem [elasticsearch-rails](https://github.com/elastic/elasticsearch-rails)
 
 The only requirement for installing Elasticsearch is a recent version of Java. Preferably, you should install the latest version of the official Java from www.java.com.
-
 
 Then, follow the steps on http://www.elastic.co/guide/en/elasticsearch/guide/current/_installing_elasticsearch.html
 to install Elasticsearch.
@@ -42,7 +42,7 @@ $ rake elastest:create_index
 
 ```
 
-Elastic search is accessible at http://localhost:9200/articles/article/1
+Elastic search is accessible at [http://localhost:9200/articles/article/1](http://localhost:9200/articles/article/1)
 (will show first article)
 
-Rails version is at http://localhost:3000/search
+Rails version is at [http://localhost:3000/search](http://localhost:3000/search)
