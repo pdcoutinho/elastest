@@ -10,7 +10,7 @@ Then, follow the steps on [the official guide](http://www.elastic.co/guide/en/el
 
 Prepare the database and then run
 
-```ruby
+```bash
 $ rake db:seed
 ```
 
@@ -32,7 +32,7 @@ comment_count_per_article = 3
 
 Run the commands to drop/create the Article index
 
-```ruby
+```bash
 # drops Article index
 $ rake elastest:drop_index
 
