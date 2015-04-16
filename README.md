@@ -35,9 +35,14 @@ Run the commands to drop/create the Article index
 
 ```ruby
 # drops Article index
-rake elastest:drop_index
+$ rake elastest:drop_index
 
 # creates Article index
-rake elastest:create_index
+$ rake elastest:create_index
 
 ```
+
+Elastic search is accessible at http://localhost:9200/articles/article/1
+(will show first article)
+
+Rails version is at http://localhost:3000/search
