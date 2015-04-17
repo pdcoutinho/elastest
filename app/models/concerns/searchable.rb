@@ -44,10 +44,11 @@ module Searchable
       self.as_json(
         methods: :id_as_string,
         only: [:id_as_string, :title, :text, :status],
-        include: { user: { only: [:id, :name] },
-                   comments: { only: :body, include: { user: { only: :name }}
-                   }
-                 })
+        include: {
+          user: { only: [:id, :name] },
+          comments: { only: :body, include: { user: { only: :name }}
+        }
+      })
     end
 
     # this method sets the search parameters, both query and filters
@@ -61,7 +62,6 @@ module Searchable
               query: query,
               fields: ['title^10', 'text^5', 'id_as_string^15', 'user.name', 'user.name.raw', 'comments.body']
             }
-
           }
         })
       else
