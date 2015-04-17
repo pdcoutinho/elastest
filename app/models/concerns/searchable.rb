@@ -7,8 +7,6 @@ module Searchable
 
     after_touch() { __elasticsearch__.index_document }
 
-    settings index: { number_of_shards: 1 }
-
   end
 
 
