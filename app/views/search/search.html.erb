@@ -6,8 +6,14 @@
     <%= text_field_tag :q, params[:q] %>
     <%= submit_tag "Go", name: nil %>
   </p>
+  <p>
+    <%= label_tag "Status" %>
+    <%= select_tag :status, options_for_select([['Publicado', 1], ['Rascunho', 0]], params[:status]),
+          class: 'form-control filter', prompt: 'Todos' %>
+  </p>
 <% end %>
- 
+
+Found: <%= @articles.count %>
 <ul>
   <% @articles.each do |article| %>
   <hr />

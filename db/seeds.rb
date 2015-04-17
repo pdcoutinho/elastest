@@ -9,7 +9,7 @@
 
 
 # sets number of articles to create
-article_count = 20000
+article_count = 200
 
 # sets number of users to create
 user_count = 30
@@ -54,7 +54,7 @@ end
     @user = User.find(Random.new.rand(1..User.all.count))
     _article_text = article_text[Random.new.rand(0..10)] + ' ' +
       article_text[Random.new.rand(0..10)] + ' ' + article_text[Random.new.rand(0..10)]
-    @article = Article.new(title: article_text[Random.new.rand(0..10)], text: _article_text, status: [Random.new.rand(0..1)], user_id: @user.id )
+    @article = Article.new(title: article_text[Random.new.rand(0..10)], text: _article_text, status: Random.new.rand(0..1), user_id: @user.id )
     @article.save!
     comment_count_per_article.times do
       current_percent = comment_number * 100 / (article_count * comment_count_per_article)
