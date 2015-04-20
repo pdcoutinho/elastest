@@ -31,6 +31,7 @@ comment_count_per_article = 3
 ```
 
 Run the commands to drop/create the Article index.
+
 Note: On this project only the Article model is enabled for indexing
 
 ```bash
@@ -42,6 +43,9 @@ $ rake elastest:create_indices[model_name]
 
 # creates Article index
 $ rake elastest:create_index[model_name]
+
+# runs all the tasks
+$ rake elastest:all[model_name]
 
 ```
 
