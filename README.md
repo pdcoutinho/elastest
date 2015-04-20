@@ -36,6 +36,9 @@ Run the commands to drop/create the Article index
 # drops Article index
 $ rake elastest:drop_index
 
+# creates article indices
+$ rake elastest:create_indices
+
 # creates Article index
 $ rake elastest:create_index
 
@@ -45,3 +48,15 @@ Elastic search is accessible at [http://localhost:9200/articles/article/1](http:
 (will show first article).
 
 Rails version is at [http://localhost:3000/search](http://localhost:3000/search).
+
+Usefull links for elastic:
+
+```bash
+# shows statistics
+http://localhost:9200/_stats
+
+# shows the mappings
+http://localhost:9200/articles/article/_mapping
+```
+
+Aditional information can be found [here on this cheat sheet](http://elasticsearch-cheatsheet.jolicode.com/)
