@@ -4,7 +4,7 @@ namespace :elastest do
     _model_name = model_name[:model_name].capitalize.constantize
     start_time = Time.now
     puts "Dropping index for #{_model_name}..."
-    _model_name.__elasticsearch__.client.indices.delete index: Article.index_name rescue nil
+    _model_name.__elasticsearch__.client.indices.delete index: _model_name.index_name rescue nil
     end_time = Time.now
     puts "Dropped index for #{_model_name} in #{end_time - start_time} milliseconds."
   end
@@ -13,22 +13,22 @@ namespace :elastest do
   task :create_indices, [:model_name] => :environment do |t, model_name|
     _model_name = model_name[:model_name].capitalize.constantize
     start_time = Time.now
-    puts "Creating index for #{_model_name}..."
+    puts "Creating indices for #{_model_name}..."
     _model_name.__elasticsearch__.client.indices.create \
       index: _model_name.index_name,
       body: { settings: _model_name.settings.to_hash, mappings: _model_name.mappings.to_hash }
     end_time = Time.now
-    puts "Indexed #{_model_name.all.count} #{_model_name} in #{end_time - start_time} milliseconds."
+    puts "Created indices for #{_model_name} in #{end_time - start_time} milliseconds."
   end
 
   desc "Creates the model index"
   task :create_index, [:model_name] => :environment do |t, model_name|
     _model_name = model_name[:model_name].capitalize.constantize
     start_time = Time.now
-    puts "Creating index for #{_model_name}..."
+    puts "Creating index for #{_model_name.to_s.pluralize}..."
     _model_name.import
     end_time = Time.now
-    puts "Indexed #{_model_name.all.count} articles in #{end_time - start_time} milliseconds."
+    puts "Indexed #{_model_name.all.count} #{_model_name.to_s.pluralize} in #{end_time - start_time} milliseconds."
   end
 
   desc "Runs all tasks at once, starting by dropping the index, then creating the indices and finally indexing"
