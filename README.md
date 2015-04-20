@@ -30,7 +30,7 @@ user_count = 30
 comment_count_per_article = 3
 ```
 
-Run the commands to drop/create the Article index
+Run the commands to drop/create the Article index.
 Note: On this project only the Article model is enabled for indexing
 
 ```bash
